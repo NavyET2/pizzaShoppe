@@ -1,0 +1,25 @@
+pairs:
+  sfs: Scott Scholz
+  aa:
+email:
+  sfs: scottscholzpdx@gmail.com
+  aa:
+
+// Create a new project directory with Git repository
+// In terminal:
+
+//  $ cd Desktop
+//  $ mkdir hello-world
+//  $ cd hello-world
+//  $ git init
+//  $ git pair al edlf
+//  Note: for solo work, the git pair command is unnecessary.
+
+//  Git Commands
+//  git init: Initializes new local Git repository.
+
+//  git pair __ __: When two sets of initials matching .pairs file are provided, uses pivotal_git_scripts to pair two people together.
+
+//  git config --global user.name ___: Globally configures Git profile for entire device (use only when working solo).
+
+//  git about: Verifies the current pair assignment.
