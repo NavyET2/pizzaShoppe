@@ -5,11 +5,63 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.0.0.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Sample Project</title>
+    <title>Pizza Shoppe</title>
   </head>
   <body>
+    <form id="orderForm">
+      <div class="container">
+        <div class="pizzaDataForms">
+          <div class="form-group">
+              <label for="user"></label>
+              <input type="text" class="form-control" id="user">
+            </div>
+          <div class"form-group">
+            <h3> Pizza Size </h3>
+            <label class="radio">
+              <input type="radio" name="size" value="Small">Small $7.11
+            </label>
+            <label class="radio">
+              <input type="radio" name="size" value="Medium">Medium $10.22
+           </label>
+            <label class="radio">
+              <input type="radio" name="size" value="Large">Large $12.33
+            </label>
+            <label class="radio">
+              <input type="radio" name="size" value="Extra Large">Extra Large $14.44
+            </label>
+          </div>
+          <h3>Eat In or Dine Out</h3>
+          <label class="toGo"></label>
+          <select id="toGo" required="">
+            <option value="Eat In">Eat In - No Cost</option>
+            <option value="toGo">To Go - $2 Discount</option>
+          </select>
+        </div>
+          <div class"form-group">
+            <h3>Pizza Toppings</h3>
+            <label class="pizzaStyle">Toppings</label>
+            <select id="pizzaStyle" required="">
+              <option value="Four Cheese">Four Cheese +No Added Charge</option>
+              <option value="Artisan Pepperoni">Artisan Pepperoni +$.50</option>
+              <option value="Meat Trio Combo">Meat Trio Combo +$4.00</option>
+              <option value="Tropical Island">Tropical Island +$1.25</option>
+            </select>
+          </div>
+        <button type="submit" class="btn btn-primary">Submit Order!</button>
+        <hr>
+        </div>
+      </form>
     <div class="container">
-      <h1>Sample Project</h1>
+      <div id="orderDisplay">
+        <h5>Order Details</h5>
+        <p>Pizza Order:</p>
+        <ul>
+          <li>Pizza User: <span id="userDisplay"></span></li>
+          <li>Pizza Size: <span id="sizeDisplay"></span></li>
+          <li>Pizza Topping Set: <span id="pizzaStyleDisplay"></span></li>
+          <li>Cost: $<span id="costDisplay"></span></li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
