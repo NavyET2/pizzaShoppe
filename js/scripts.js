@@ -4,7 +4,7 @@ function Pizza(size, pizzaStyle, toGo, cost, eater) { //main constructor - pizza
   this.pizzaStyle = pizzaStyle;
   this.toGo = toGo;
   this.cost = 7.11;
-  this.eater = eater;
+  this.eater = eater;//orderer - used eater to reduce confusion of order/orderer/customer
 }
 
 Pizza.prototype.totalPrice = function() { //prototype totalPrice - waiting for front end user inputs of size style and togo
