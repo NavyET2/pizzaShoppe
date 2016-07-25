@@ -2,9 +2,9 @@
 function Pizza(size, pizzaStyle, toGo, cost, eater) { //main constructor - pizza
   this.size = size;
   this.pizzaStyle = pizzaStyle;
-  this.toGo = toGo;
+  this.toGo = toGo; //this could be a boolean. for time purposes this was overlooked
   this.cost = 7.11;
-  this.eater = eater;//orderer - used eater to reduce confusion of order/orderer/customer
+  this.eater = eater;//orderer - used eater to reduce confusion of order/orderer/customer/etc.
 }
 
 Pizza.prototype.totalPrice = function() { //prototype totalPrice - waiting for front end user inputs of size style and togo
@@ -35,7 +35,7 @@ Pizza.prototype.totalPrice = function() { //prototype totalPrice - waiting for f
   }
 
   // var num = this.cost;
-  // var fixedCost = num.toFixed(2);
+  // var fixedCost = num.toFixed(2); explore later
 };
 
 
@@ -45,16 +45,15 @@ $(document).ready(function() {
     event.preventDefault(); //prevent automatic form submission upon page load
     var pizzaSize = $("input:radio[name=size]:checked").val();
     var orderPizzaStyle = $("#pizzaStyle").val();
-    var ordertoGo = $("#toGo").val(); //this could be a boolean. for time purposes,
+    var ordertoGo = $("#toGo").val(); //this could be a boolean. for time purposes this was overlooked
     var orderEater = $("input#eater").val(); //user name
     var pizzaOrdered = new Pizza(pizzaSize, orderPizzaStyle, ordertoGo, orderEater);
 
-    pizzaOrdered.totalPrice(); //calls upon backend protoype to display price of combination from user input
+    pizzaOrdered.totalPrice(); //calls upon backend protoype totalPrice and front end pizzaOrdered to display price of combination from user input
+    var num = pizzaOrdered.cost; //setting cost to a variable
+    var fixedCost = num.toFixed(2); //added to shrink to two decimals to simulate money
 
-    var num = pizzaOrdered.cost;
-    var fixedCost = num.toFixed(2); //added to round to two decimals to simulate money
-
-    $("#costDisplay").text(fixedCost);// pushes new pizza and other variables to the html page via .text
+    $("#costDisplay").text(fixedCost); //pushes new pizza and other variables to the html page via .text
     $("#sizeDisplay").text(pizzaOrdered.size);
     $("#pizzaStyleDisplay").text(pizzaOrdered.pizzaStyle);
     $("#orderEater").text(orderEater);
@@ -63,7 +62,7 @@ $(document).ready(function() {
     console.log(fixedCost); //troubleshooting
     console.log(orderEater); //troubleshooting
     $("#orderForm").hide();//hides form after form submit
-    $("#pizzaDisplay").show();
+    $("#pizzaDisplay").show();//shows pizza order after form submit. disabled in styles.css
 
   });
 });
